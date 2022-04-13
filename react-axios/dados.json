@@ -1,0 +1,44 @@
+{
+  "alunos": [
+    {
+      "id": "1",
+      "identificacao": "Tatiane Carolina de Souza",
+      "cpf": "776.852.608-90",
+      "mae": "Sophia Pietra Baptista",
+      "contato": "(69) 99243-1496",
+      "localizacao": "Ji-Paraná/RO"
+    },
+    {
+      "id": "2",
+      "identificacao": "Kevin Calebe Miguel Barros",
+      "cpf": "123.439.176-88",
+      "mae": "Mirella Julia Assis",
+      "contato": "(69) 99267-3345",
+      "localizacao": "Vilhena/RO"
+    },
+    {
+      "id": "3",
+      "identificacao": "Noah Manoel Figueiredo",
+      "cpf": "450.398.265-10",
+      "mae": "Joana Luzia Vieira",
+      "contato": "(69) 98102-4018",
+      "localizacao": "Ji-Paraná/RO"
+    },
+    {
+      "id": "4",
+      "identificacao": "Giovanni Mateus Diogo da Mota",
+      "cpf": "211.407.918-30",
+      "mae": "Adriana Natália Maya Melo",
+      "contato": "(69) 99870-3399",
+      "localizacao": "Ji-Paraná/RO"
+    },
+    {
+      "id": "5",
+      "identificacao": "Pato",
+      "cpf": "111.444.555-09",
+      "mae": "Pata",
+      "contato": "(69) 99870-5555",
+      "localizacao": "Ji-Paraná/RO"
+    }
+  ]
+}
