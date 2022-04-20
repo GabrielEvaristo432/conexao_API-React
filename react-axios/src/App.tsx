@@ -32,6 +32,10 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
+import DeleteIcon from '@mui/icons-material/Delete';
+import Print from '@mui/icons-material/Print';
+import Edit from '@mui/icons-material/Edit';
+import Eye from '@mui/icons-material/Visibility';
 
 export default function StickyHeadTable() {
   const columns = [
@@ -52,6 +56,16 @@ export default function StickyHeadTable() {
       label: 'Localização',
       minWidth: 100
     },
+    {
+      id: 'data_modificacao',
+      label: 'Data de modificação',
+      minWidth: 100
+    },
+    {
+      id: 'acoes',
+      label: 'Ações',
+      minWidth: 100
+    }
   ];
 
   const [alunos, setAlunos] = useState([]);
@@ -62,7 +76,7 @@ export default function StickyHeadTable() {
       const { data: response } = await axios.get('http://localhost:3010/alunos');
       setAlunos(response);
     } catch (error) {
-      console.error(error.message);
+      console.error('Ocorreu um erro:',error.message);
     }
 
   }
@@ -104,10 +118,34 @@ export default function StickyHeadTable() {
               .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
               .map((a, index) => {
                 return (
-                  <TableRow hover role="checkbox" tabIndex={-1} key={index}>
+                  <TableRow hover role="checkbox" tabIndex={-1} key={index}
+                    
+                  >
                     {columns.map((column) => {
-                      const value = a[column.id];
-                      return (
+                      var value;
+                      if (column.id==='acoes'){
+                        value = [
+                        <Print fontSize="small"
+                        sx={{
+                          paddingRight: '5px'
+                        }}
+                        />,
+                        <Eye fontSize="small"
+                        sx={{
+                          paddingRight: '5px'
+                        }}
+                        />,
+                        <Edit fontSize="small"
+                        sx={{
+                          paddingRight: '5px'
+                        }}
+                        />,
+                        <DeleteIcon fontSize="small"/>
+                      ]
+                      } else {
+                        value = a[column.id];
+                      }
+                      return(
                         <TableCell key={column.id}>
                           {value}
                         </TableCell>
